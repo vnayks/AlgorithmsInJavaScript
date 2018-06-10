@@ -14,7 +14,7 @@ describe('InsertionSort', function() {
     it('Should return true', function() {
       this.timeout(20000)
       var nums=[];
-      for(var i=0;i<100000;i++){
+      for(var i=0;i<1000;i++){
         nums.push(randomIntFromInterval(0,100000))
       }            
       var result=insertionSort.sort(nums);            
@@ -36,7 +36,7 @@ describe('InsertionSort Descending Tests', function() {
     it('Should return true', function() {
       this.timeout(20000)
       var nums=[];
-      for(var i=0;i<100000;i++){
+      for(var i=0;i<1000;i++){
         nums.push(randomIntFromInterval(0,100000))
       }
       console.log("finished creating long array");
@@ -52,6 +52,7 @@ var checkIfSorted = function(nums, sortDescending){
       if(nums[i]<nums[i+1])
         return false;
     }
+    return true;
   }
   for(var i=0;i<nums.length-1;i++){
     if(nums[i]>nums[i+1])
