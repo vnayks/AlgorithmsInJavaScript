@@ -1,8 +1,8 @@
 var assert = require('chai').assert;
 var mergeSort = require('../src/sort/mergeSort.js')
-var utils = require('../test/utils.js')
+var utils = require('../tests/utils.js')
 
-describe('InsertionSort', function() {
+describe('MergeSort', function() {
   describe('BasicTests', function() {
     it('Should return true', function() {
       var nums=[3,1,5,4];

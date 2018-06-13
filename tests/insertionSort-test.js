@@ -14,13 +14,38 @@ describe('InsertionSort', function() {
     it('Should return true', function() {
       this.timeout(20000)
       var nums=[];
-      for(var i=0;i<1000;i++){
+      for(var i=0;i<10000;i++){
         nums.push(randomIntFromInterval(0,100000))
       }            
       var result=insertionSort.sort(nums);            
       assert.isTrue(checkIfSorted(result), "sorted array is :" + result );      
     });
   });
+
+  describe('Negative integer input', function() {
+    it('Should return true', function() {
+      var nums=[-2,3,23,0,-99,-22,-12,-22222,-09,-234,-231,-929,-92];
+      var result=insertionSort.sort(nums);
+      assert.isTrue(checkIfSorted(result), "sorted array is :" + result );      
+    });
+  });
+
+  describe('empty input', function() {
+    it('Should return true', function() {
+      var nums=[];
+      var result=insertionSort.sort(nums);
+      assert.isTrue(checkIfSorted(result), "sorted array is :" + result );      
+    });
+  });
+
+  describe('Input all same elements', function() {
+    it('Should return true', function() {
+      var nums=[1,1,1,1,1,1,1,1,1,1,1,1];
+      var result=insertionSort.sort(nums);
+      assert.isTrue(checkIfSorted(result), "sorted array is :" + result );      
+    });
+  });
+
 });
 
 describe('InsertionSort Descending Tests', function() {
@@ -36,14 +61,38 @@ describe('InsertionSort Descending Tests', function() {
     it('Should return true', function() {
       this.timeout(20000)
       var nums=[];
-      for(var i=0;i<1000;i++){
+      for(var i=0;i<10000;i++){
         nums.push(randomIntFromInterval(0,100000))
       }
-      console.log("finished creating long array");
       var result=insertionSort.sortDescending(nums);            
       assert.isTrue(checkIfSorted(result,true), "sorted array is :" + result );      
     });
   });
+
+  describe('Negative integer input', function() {
+    it('Should return true', function() {
+      var nums=[-2,3,23,0,-99,-22,-12,-22222,-09,-234,-231,-929,-92];
+      var result=insertionSort.sortDescending(nums);
+      assert.isTrue(checkIfSorted(result,true), "sorted array is :" + result );      
+    });
+  });
+
+  describe('empty input', function() {
+    it('Should return true', function() {
+      var nums=[];
+      var result=insertionSort.sortDescending(nums);
+      assert.isTrue(checkIfSorted(result,true), "sorted array is :" + result );      
+    });
+  });
+
+  describe('Input all same elements', function() {
+    it('Should return true', function() {
+      var nums=[1,1,1,1,1,1,1,1,1,1,1,1];
+      var result=insertionSort.sortDescending(nums);
+      assert.isTrue(checkIfSorted(result,true), "sorted array is :" + result );      
+    });
+  });
+
 });
 
 var checkIfSorted = function(nums, sortDescending){
