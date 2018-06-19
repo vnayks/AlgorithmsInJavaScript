@@ -72,12 +72,12 @@ var mergeDescending = function (nums, start, middle, end) {
     for (var i = 0; i < leftArray.length - 1; i++) {
         leftArray[i] = nums[start + i];
     }
-    leftArray[leftArray.length - 1] = 999999;
+    leftArray[leftArray.length - 1] = -999999;
 
     for (var j = 0; j < rightArray.length - 1; j++) {
         rightArray[j] = nums[middle + 1 + j];
     }
-    rightArray[rightArray.length - 1] = 999999;
+    rightArray[rightArray.length - 1] = -999999;
 
     var i = 0, j = 0;
     var k = start;
